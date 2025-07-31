@@ -124,7 +124,8 @@ python 5_GNNtorsionsCSD.py -H <hostname> -u <username> -d <dbname> -f dat_1.txt 
 # calculate hexane ensemble and extract torsions
 python 5_GNNtorsionsCSD.py -H <hostname> -u <username> -d <dbname> -f dat_1.txt -s hexane -cd <cachedir>
 ```
-> [!NOTE] For the DASH dataset, the same procedure is applied. Please note that the script will need to be adapted to read and write to the correct tables in the database.
+> [!NOTE] 
+> For the DASH dataset, the same procedure is applied. Please note that the script will need to be adapted to read and write to the correct tables in the database.
 
 ## Analysis
 **ComparisonMetrics.ipynb:** Demonstrates the statistical distances W<sub>2</sub> and ω as shown in [1]. <br/>
