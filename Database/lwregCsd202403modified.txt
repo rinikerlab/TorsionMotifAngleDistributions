@@ -1,0 +1,8 @@
+{'dbtype': 'postgresql',
+ 'lwregSchema': 'csd202403modified',
+ 'cacheConnection': True,
+ 'standardization': 'none',
+ 'removeHs': 0,
+ 'useTautomerHashv2': 0,
+ 'registerConformers': 1,
+ 'numConformerDigits': 3}

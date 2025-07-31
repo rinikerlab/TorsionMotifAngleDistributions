@@ -1,0 +1,7 @@
+{'dbtype': 'postgresql',
+ 'lwregSchema': '',
+ 'cacheConnection': True,
+ 'standardization': 'sanitize',
+ 'removeHs': 1,
+ 'useTautomerHashv2': 0,
+ 'registerConformers': 0}
