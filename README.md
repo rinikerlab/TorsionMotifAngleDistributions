@@ -55,7 +55,7 @@ createdb -e <new dbname>
 ```
 3) Change the USERNAMEPLACEHOLDER in Database/torsionMotifsStudy.sql to your postgres username.
 4) Restore the schema.
-> [!NOTE] Restoring the schema includes the creation of the rdkit extension to be able to use the RDKit cartidge with data from the lwreg tables (see https://greglandrum.github.io/rdkit-blog/posts/2024-10-31-lwreg-and-the-cartridge.html). You need to have superuser rights unless your server has been configured otherwise. In the case of a local postgreSQL installation, you are the superuser by default.
+[!NOTE] Restoring the schema includes the creation of the rdkit extension to be able to use the RDKit cartidge with data from the lwreg tables (see https://greglandrum.github.io/rdkit-blog/posts/2024-10-31-lwreg-and-the-cartridge.html). You need to have superuser rights unless your server has been configured otherwise. In the case of a local postgreSQL installation, you are the superuser by default.
 ```
 # remote server
 psql -U <username> -h <host> -p <port> -d <new dbname> -f torsionMotifsStudy.sql
