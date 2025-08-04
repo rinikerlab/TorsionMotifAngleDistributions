@@ -151,6 +151,16 @@ For visual expection of the differences in the torsion motif angle distributions
 ```
 python torsionProfilesVizApp.py
 ```
+`fitCoeffsAllEnvs.pkl` contains a dictionary with all coefficients for the Wrapped Mirrored Gaussian fits (see https://github.com/rinikerlab/TorsionDistributionFitting). The structure of the dictionary is as follows:
+```
+[entrynr]
+    - [smarts]
+    - [coeffsVac]
+    - [coeffsWater]
+    - [coeffsHexane]
+    - [coeffsCrystal]
+```
+Each coeff array of shape nx3 was flattened before adding it to the dictionary.
 
 ## Authors
 Jessica Braun
