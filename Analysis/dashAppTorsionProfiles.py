@@ -47,7 +47,7 @@ def update_graph(entrynr, threshold):
     crystalData = RetrieveRawDataCsdModified(entrynr)
     vacData = RetrieveRawDataGNN(entrynr, threshold, 'vac')
     tip3pData = RetrieveRawDataGNN(entrynr, threshold, 'tip3p')
-    hexaneData = RetrieveRawDataGNN(entrynr, 25, 'hexane')
+    hexaneData = RetrieveRawDataGNN(entrynr, threshold, 'hexane')
 
     # symmetrize data
     crystalData = np.concatenate((crystalData, 2*np.pi-crystalData))
