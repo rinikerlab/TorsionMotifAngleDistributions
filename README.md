@@ -102,7 +102,7 @@ psql -d <dbname> -f comparisonsMetrics.sql
 
 ## Data
 As a prerequisite, an SD file with the 2024.03 version of the CSD is needed. <br/>
-Here, an example file of 3 molecules (example.sdf, RDKit conformers of 3 CSd smiles) is provided.
+Here, an example file of 3 molecules (example.sdf, RDKit conformers of 3 CSD smiles) is provided.
 Data curration for the CSD molecules:
 ```
 python 1_CsdOriginalRegistration.py -H <hostname> -u <username> -d <dbname> -f <csd.sdf>
