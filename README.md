@@ -136,7 +136,7 @@ python 5_GNNtorsionsCSD.py -H <hostname> -u <username> -d <dbname> -f dat_1.txt 
 **Using the dash app:** The dash app that can be used when a fully populated database is available. Run with `python dashAppTorsionProfiles.py`.
 
 ## Results
-`torsionHistogramsAllEnvs.pkl` contains a dictionary with torsion histograms for each torsion motif (SMARTS pattern) in the four environments:
+`torsionHistogramsAllEnvs.pkl` contains a dictionary with torsion histograms for each torsion motif (SMARTS patterns adapted from J. Chem. Inf. Model. 2022, 62, 7, 1644–1653) in the four environments:
 ```
 [entrynr]
     - [smarts]
@@ -161,6 +161,10 @@ python torsionProfilesVizApp.py
     - [coeffsCrystal]
 ```
 Each coeff array of shape nx3 was flattened before adding it to the dictionary.
+
+## Thanks
+This program uses software written by other people.
+We thank all their authors for their contributions. 
 
 ## Authors
 Jessica Braun
