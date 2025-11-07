@@ -8,8 +8,8 @@ def ComputeCramerVonMises(dat1, dat2, radian):
     if not radian:
         dat1 = np.deg2rad(dat1)
         dat2 = np.deg2rad(dat2)
-    dat1 = np.random.choice(dat1, 1000)
-    dat2 = np.random.choice(dat2, 1000)
+    dat1 = np.random.choice(dat1, 10000)
+    dat2 = np.random.choice(dat2, 10000)
     symmetrizedDat1 = np.concatenate((dat1, 2*np.pi-dat1))
     symmetrizedDat2 = np.concatenate((dat2, 2*np.pi-dat2))
     globalMin = min(np.min(symmetrizedDat1), np.min(symmetrizedDat2))
