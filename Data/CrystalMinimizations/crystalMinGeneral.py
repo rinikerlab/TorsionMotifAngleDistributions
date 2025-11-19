@@ -1,25 +1,18 @@
 import openmm
 from openmm import app
-from openmm import MonteCarloBarostat,AndersenThermostat
-from openmm import amd
 from openmm.app import ForceField as Forcefield
 from openmm.app import Modeller
-from openmm.app import PME,CutoffPeriodic
-from openmm.vec3 import Vec3
-from openmm.unit import nanometer,picosecond,femtosecond,kelvin,bar,kilojoule_per_mole,angstrom
+from openmm.app import CutoffPeriodic
+from openmm.unit import nanometer,picosecond,kelvin
 from openmm.app import PDBFile
-from sys import stdout
 from openff.toolkit.topology import Molecule
-from openff.toolkit.topology import Topology 
 from openmmforcefields.generators import SMIRNOFFTemplateGenerator
-from openmm.app import CutoffPeriodic, HBonds
-from openff import toolkit
-from openff.toolkit.typing.engines.smirnoff import ForceField
-from openff.toolkit.topology import Molecule, Topology
+from openmm.app import CutoffPeriodic
+from openff.toolkit.topology import Molecule
 import argparse
 from rdkit import Chem
-from rdkit.Chem import rdmolops
-import numpy as np
+
+debug = False
 
 parser = argparse.ArgumentParser(description="PDB filename")
 parser.add_argument("-t","--template",type=str,help="Filename for template for crystal minimization")
@@ -34,8 +27,9 @@ for frag in frags:
     if Chem.MolToSmiles(frag) != "[H]O[H]":
         mol = frag
 smiles = Chem.MolToSmiles(mol)
-print("Molecule SMILES: ")
-print(smiles)
+if debug:
+    print("Molecule SMILES: ")
+    print(smiles)
 
 molecule = Molecule.from_smiles(smiles, allow_undefined_stereo=True)
 molecule.name = "UNK"
@@ -51,9 +45,10 @@ modeller = Modeller(omm_topo, coordinates)
 modeller_topo = modeller.getTopology()
 modeller_positions = modeller.getPositions()
 
-print("Any unmatched residues: ")
-unmatched_residues = forcefield.getUnmatchedResidues(modeller_topo)
-print(unmatched_residues)
+if debug:
+    print("Any unmatched residues: ")
+    unmatched_residues = forcefield.getUnmatchedResidues(modeller_topo)
+    print(unmatched_residues)
 
 print("Periodic Box Vector: ")
 print(modeller_topo.getPeriodicBoxVectors())
@@ -83,4 +78,4 @@ simulation.minimizeEnergy()
 # Save the minimized structure
 positions = simulation.context.getState(getPositions=True).getPositions()
 PDBFile.writeFile(simulation.topology, positions, open(args.outname, 'w'))
-print('Minimization complete. Output written to {args.outname}')
+print(f'Minimization complete. Output written to {args.outname}')
