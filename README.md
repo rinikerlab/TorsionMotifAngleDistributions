@@ -5,7 +5,7 @@ Torsion Motif Angle Distributions Across Different Environments
 
 
 ## Publication
-[1] TO BE ADDED
+[1] pre-print: [https://chemrxiv.org/engage/chemrxiv/article-details/68dbdcf2f2aff167703b206e](https://chemrxiv.org/engage/chemrxiv/article-details/68dbdcf2f2aff167703b206e)
 
 ## Abstract
 Understanding the conformational ensemble of molecules in different environments is at the core of many research efforts.
